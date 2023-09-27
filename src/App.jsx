@@ -2,30 +2,32 @@ import './App.css'
 import Card from './components/Card/Card'
 
 function App() {
-  const personagem1 = {
+  const item1 = {
     id: 0,
     nome: 'Rick Sanches',
-    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg'
+    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+    tags: ['Status: Vivo', 'Espécie: Humana']
   }
 
-  const personagem2 = {
+  const item2 = {
     id: 1,
     nome: 'Morty Smith',
-    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg'
+    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
+    tags: ['Origem: Terra C-137']
   }
 
-  const personagem3 = {
+  const item3 = {
     id: 2,
     nome: 'Summer Smith',
-    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg'
+    imagemUrl: 'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
   }
 
-  const itens = [personagem1, personagem2, personagem3]
+  const itens = [item1, item2, item3]
 
   return (
     <>
-      {itens.map(function (personagem) {
-      return <Card key={personagem.id} item={personagem} />
+      {itens.map(function (item, index) {
+      return <Card item={item} key={`card_${index}`} />
       })}
     </>
   )
